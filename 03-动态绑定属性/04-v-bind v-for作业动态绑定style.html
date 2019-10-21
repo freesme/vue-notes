@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-bind动态绑定class属性作业</title>
+</head>
+<body>
+<div id="app" v-cloak>
+
+    <h1 class="active">{{message}}</h1>
+    <ul>
+        <li class="libox" v-for="(v,index) in movies" @click="textSwitch(index)" :class="activeIndex==index ? 'active':''">{{index+v}}</li>
+    </ul>
+
+</div>
+</body>
+
+<script src="../js/vue.js"></script>
+<script>
+
+    const app = new Vue({
+        el: "#app",
+        data: {
+            message: "你好",
+            movies: ['上海堡垒', '啥啥演艺圈', '烂片', '无底线'],
+            activeIndex: 0
+        },
+        methods: {
+            change: function () {
+                this.isActive = !this.isActive
+            },
+            getClass() {
+                return {active: !this.isActive}
+            },
+            textSwitch(index) {
+                this.activeIndex = index;
+            }
+
+        }
+    })
+
+
+</script>
+<style>
+    .active {
+        color: #cd2d44;
+    }
+
+    .libox {
+        font-size: 40px;
+    }
+</style>
+</html>

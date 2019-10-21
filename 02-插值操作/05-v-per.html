@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-per</title>
+</head>
+<body>
+<div id="app">
+    <h2 style="color: brown">per用于跳过这个元素和它资源色的编译过程,用于显示原本的Mustache语法</h2>
+    <h1>{{message}}</h1>
+    <h1 v-per>{{message}}</h1>
+</div>
+</body>
+
+<script src="../js/vue.js"></script>
+<script>
+
+    const app = new Vue({
+        el: "#app",
+        data: {
+            message: "你好",
+        }
+
+    })
+</script>
+</html>

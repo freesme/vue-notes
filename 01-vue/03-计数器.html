@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计数器</title>
+</head>
+<body>
+<div id="app">
+    <h1>当前计数: {{counter}}</h1>
+
+    <button v-on:click="counter++"> + </button>
+    <button v-on:click="counter--"> - </button>
+    <br>
+    <button @click="add"> + </button>
+    <button @click="sub"> - </button>
+
+
+</div>
+</body>
+
+<script src="../js/vue.js"></script>
+<script>
+
+    const app = new Vue({
+        // 类型 string | HTMLElement  决定Vue实例会管理哪一个DOM
+        el: "#app",
+        // 类型 Object | Function     Vue实例对应的数据对象
+        data: {
+            counter: 0
+        },
+        // 类型 {[key:string]:Function}
+        // 定义属于Vue的一些方法,可以在其他地方调用,也可以在指令中使用
+        methods: {
+            add: function () {
+                this.counter++;
+                console.log("加加,当前值:"+this.counter)
+            },
+            sub: function () {
+                this.counter--;
+                console.log("减减,当前值:"+this.counter)
+            }
+        }
+
+    })
+</script>
+</html>

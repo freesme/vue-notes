@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-bind动态绑定class属性</title>
+</head>
+<body>
+<div id="app" v-cloak>
+
+    <h1 class="title" :class="[active,hello]">{{message}}</h1>
+    <h1 :class="getClass()">{{message}}</h1>
+    <button @click="change">换个色</button>
+</div>
+</body>
+
+<script src="../js/vue.js"></script>
+<script>
+
+    const app = new Vue({
+        el: "#app",
+        data: {
+            message: "你好",
+            isActive: false,
+            hello:'ssssssssssss'
+        },
+        methods: {
+            change: function () {
+                this.isActive = !this.isActive
+            },
+            getClass(){
+                return {active:!this.isActive}
+            }
+        }
+    })
+
+
+</script>
+<style>
+    .active {
+        color: indianred;
+    }
+</style>
+</html>

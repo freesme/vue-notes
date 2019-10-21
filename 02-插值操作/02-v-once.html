@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-once</title>
+</head>
+<body>
+<div id="app">
+    <h1 v-once>{{message}}, 王小波 [v-once]</h1>
+    <h1 >{{message}}, 李银河 [default]</h1>
+    <button @click="change">change</button>
+</div>
+</body>
+
+<script src="../js/vue.js"></script>
+<script>
+
+    const app = new Vue({
+        el: "#app",
+        data: {
+            message: "你好",
+        },
+        methods:{
+            change:function () {
+                this.message = 'HELLO'
+                console.log(this.message)
+            }
+        }
+
+    })
+</script>
+</html>

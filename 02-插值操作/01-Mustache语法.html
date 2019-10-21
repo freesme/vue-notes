@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mustache语法</title>
+</head>
+<body>
+<div id="app">
+    <h1>{{message}}, 王小波</h1>
+    <h2>{{firstName + ' ' +lastName}}</h2>
+    <h2>{{firstName}} {{lastName}}</h2>
+    <h2>{{counter*4}}</h2>
+
+    <ul>
+        <li v-for="item in movies">{{item}}</li>
+    </ul>
+</div>
+</body>
+
+<script src="../js/vue.js"></script>
+<script>
+
+    const app = new Vue({
+        el: "#app",
+        data: {
+            counter: 2,
+            message: "你好Vue",
+            firstName: "Do",
+            lastName: "Di"
+        }
+
+    })
+</script>
+</html>

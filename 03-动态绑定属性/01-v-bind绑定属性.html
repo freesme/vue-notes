@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-bind动态绑定属性</title>
+</head>
+<body>
+<div id="app" v-cloak>
+    <h2 style="color: brown">v-bind绑定,简写' v-bind: ' -> ':' </h2>
+    <h1>{{message}}</h1>
+
+    <img style="width: 50%" v-bind:src="url">
+    <img style="width: 50%" :src="url2">
+
+</div>
+</body>
+
+<script src="../js/vue.js"></script>
+<script>
+
+    const app = new Vue({
+        el: "#app",
+        data: {
+            message: "你好",
+            url:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571682971389&di=c1b8ecf4aa06d3f979b050e9ef6ff367&imgtype=0&src=http%3A%2F%2Fwx2.sinaimg.cn%2Fcrop.0.0.1797.1009.1000%2F005NLzplly1fvf2rfe838j31jm0s2gv8.jpg",
+            url2:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571683349176&di=b2191b788d57c4d14d6a97457bcdfa06&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fq_mini%2Cc_zoom%2Cw_640%2Fimages%2F20171108%2Fd1294e98bc9d422fac0002df43b54f18.gif"
+        }
+    })
+
+
+</script>
+<style>
+    [v-cloak] {
+        display: none;
+    }
+</style>
+</html>

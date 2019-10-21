@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-per</title>
+</head>
+<body>
+<div id="app" v-cloak>
+    <h2 style="color: brown">v-cloak在解析之前存在,解析之后不存在???</h2>
+    <h1>{{message}}</h1>
+
+</div>
+</body>
+
+<script src="../js/vue.js"></script>
+<script>
+    setTimeout(function () {
+        const app = new Vue({
+            el: "#app",
+            data: {
+                message: "你好",
+            }
+        })
+    }, 1000)
+
+</script>
+<style>
+    [v-cloak] {
+        display: none;
+    }
+</style>
+</html>

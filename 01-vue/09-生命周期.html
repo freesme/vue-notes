@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>生命周期</title>
+</head>
+<body>
+<div id="app">
+    <h1>实物从诞生到消亡的过程</h1>
+</div>
+</body>
+
+<script src="../js/vue.js"></script>
+<script>
+
+    const app = new Vue({
+        el: "#app",
+        data: {},
+        //生命周期函数 created & mounted
+        created: function () {
+            //网络请求 -> data
+            console.log('creaeted ...')
+        },
+        mounted: function () {
+            console.log('mounted ...')
+        }
+
+
+    })
+</script>
+</html>
