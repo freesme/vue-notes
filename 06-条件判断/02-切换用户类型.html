@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>切换用户类型</title>
+</head>
+<body>
+<div id="app">
+    <span v-if="user">
+        <label for="username">用户账号</label>
+        <input type="text" id="username" placeholder="用户账号">
+    </span>
+    <span v-else>
+        <label for="email">用户邮箱</label>
+        <input type="text" id="email" placeholder="用户邮箱">
+    </span>
+    <button @click="user=!user">切换用户类型</button>
+</div>
+</body>
+
+<script src="../js/vue.js"></script>
+<script>
+
+    const app = new Vue({
+        el: "#app",
+        data: {
+            user: true,
+        },
+    })
+
+
+</script>
+<style>
+    [v-cloak] {
+        display: none;
+    }
+</style>
+</html>

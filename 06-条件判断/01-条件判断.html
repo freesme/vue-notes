@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>条件判断</title>
+</head>
+<body>
+<div id="app">
+    <h1 v-if="message>70">{{message}}</h1>
+</div>
+</body>
+
+<script src="../js/vue.js"></script>
+<script>
+
+    const app = new Vue({
+        el: "#app",
+        data: {
+            message: 1000,
+        },
+    })
+
+
+</script>
+<style>
+    [v-cloak] {
+        display: none;
+    }
+</style>
+</html>
