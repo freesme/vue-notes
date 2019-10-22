@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算属性复杂操作</title>
+</head>
+<body>
+<div id="app">
+    <h1>{{message}}</h1>
+    <h1>{{totlaPrice}}</h1>
+</div>
+</body>
+
+<script src="../js/vue.js"></script>
+<script>
+
+    const app = new Vue({
+        el: "#app",
+        data: {
+            message: "你好",
+            books: [
+                {id: 100, name: 'Unix&C++', price: 99},
+                {id: 101, name: 'Unix&Linux', price: 90},
+                {id: 102, name: 'Unix&Jvm', price: 20}
+            ]
+        },
+        //计算属性
+        computed: {
+            totlaPrice: function () {
+                let result = 0;
+                for (let i = 0; i < this.books.length; i++) {
+                    result += this.books[i].price;
+                }
+                return result;
+            }
+        }
+
+    })
+
+
+</script>
+<style>
+    [v-cloak] {
+        display: none;
+    }
+</style>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象字面量增强写法</title>
+</head>
+<body>
+<h1>对象字面量增强写法</h1>
+</body>
+<script>
+    const obj = {
+        name: 'zs',
+        age: 12
+        run: function () {
+            console.log("随风奔跑...")
+        }
+    }
+
+    //对象增强
+    const name = 'lis'
+    const age = 11
+    const obj2 = {
+        name,
+        age
+    }
+
+    //函数增强  es6 的写法
+    const obj = {
+        run() {
+            console.log("xxxx")
+        }
+    }
+</script>
+
+</html>

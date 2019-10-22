@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-on 参数</title>
+</head>
+<body>
+<div id="app" v-cloak>
+
+    <h1>{{message}}</h1>
+    <h2>获取事件</h2>
+    <button @click="btnClick">btn1</button>
+    <button @click="btnClick2($event)">btn2</button>
+
+</div>
+</body>
+
+<script src="../js/vue.js"></script>
+<script>
+
+    const app = new Vue({
+        el: "#app",
+        data: {
+            message:'Hello Vue'
+        },
+        methods:{
+            btnClick(){
+                alert(this.message)
+            },
+            btnClick2(event){
+                alert(event)
+            }
+        }
+
+    })
+
+
+</script>
+<style>
+    [v-cloak] {
+        display: none;
+    }
+</style>
+</html>

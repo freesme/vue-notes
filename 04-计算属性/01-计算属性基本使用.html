@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算属性基本使用</title>
+</head>
+<body>
+<div id="app">
+    <h1>{{message +' ' +firstName}}</h1>
+    <h1>{{message}} {{firstName}} {{lastName}}</h1>
+    <h1>{{fullName}}</h1>
+</div>
+</body>
+
+<script src="../js/vue.js"></script>
+<script>
+
+    const app = new Vue({
+        el: "#app",
+        data: {
+            message: "你好",
+            firstName: "Jr",
+            lastName: "Koli"
+        },
+        //计算属性
+        computed:{
+            fullName:function () {
+                return this.firstName+" " +this.lastName;
+            }
+        }
+
+    })
+
+
+</script>
+<style>
+    [v-cloak] {
+        display: none;
+    }
+</style>
+</html>
