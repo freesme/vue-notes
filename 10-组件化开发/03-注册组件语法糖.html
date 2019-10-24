@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>父子组件</title>
+</head>
+<body>
+    <div id="app">
+        <cpn1></cpn1>
+    </div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+    Vue.component('cpn1',{
+        template:`
+        <div>
+            <h1>标题1</h1>
+        </div>
+        `
+    })
+    const app = new Vue({
+        el:'#app'
+    })
+
+</script>
+</html>
+

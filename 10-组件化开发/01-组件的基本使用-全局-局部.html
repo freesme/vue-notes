@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <cpn></cpn>
+    </div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+    //1.创建组件构造器
+    const cpnC = Vue.extend({
+        template: `
+            <div>
+                <h2>标题</h2>
+                <p>我是内容</p>
+            </div>
+        `
+    })
+    //注册组件 (这种方式注册的是全局组件)
+    //Vue.component('cpn',cpnC)
+    const app =  new Vue({
+        el:"#app",
+        //局部注册组件
+        components:{
+            //Vue实例内部注册的是局部组件
+            cpn:cpnC
+        }
+    })
+</script>
+</html>
