@@ -11,6 +11,19 @@
 </body>
 <script src="../js/vue.js"></script>
 <script>
+    //子组件data为什么必须是函数
+
+    /**
+     * 涉及作用域问题  变量在闭包的作用域中有效
+     * 变量在多个相同的组件中相互独立
+     * data(){
+     *     return{
+     *
+     *     }
+     * }
+     */
+
+
     Vue.component('cpn1',{
         template:`
         <div>

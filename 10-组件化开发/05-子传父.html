@@ -2,9 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>子组件向父组件传值</title>
 </head>
 <body>
-
+    <div id="app">
+        <cnp @itemclick="childClick"></cnp>
+    </div>
+<template id="cpn">
+    <div>
+        <!--子组件中的事件告知父组件-->
+        <button v-for="item in categories" @click="btnClick(item)">{{item.name}}</button>
+    </div>
+</template>
 </body>
+<script src="../js/vue.js/"></script>
+<script>
+    //子组件
+    const cnp = {
+        template:'#cpn',
+        data(){
+            return{
+                categories:[
+                    {id:'aaa',name:'热门推荐1'},
+                    {id:'bbb',name:'热门推荐2'},
+                    {id:'ccc',name:'热门推荐3'},
+                    {id:'ddd',name:'热门推荐47777777777777777777777777777777777777777'}
+                ]
+            }
+        },
+        methods:{
+            btnClick(item){
+                console.log(item.id)
+                //向父组件发送消息
+                this.$emit('itemclick',item)
+            }
+        }
+    }
+    const app = new Vue({
+        el:"#app",
+        components:{
+            cnp:cnp
+        },methods: {
+            childClick(item){
+                //接收子组件传递的对象
+                console.log("parent vue - childVue has been click id:" ,item.id)
+            }
+        }
+    })
+</script>
 </html>
