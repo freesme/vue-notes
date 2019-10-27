@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>父子组件传值案例</title>
+</head>
+<body>
+    <div id="app">
+        <cpn :number1="num1"
+             :number2="num2"
+             @num1change="num1change"
+             @num2change="num2change"/>
+    </div>
+<template id="cpn">
+    <div>
+        <h2>props:{{number1}}</h2>
+        <h2>data:{{dnumber1}}</h2>
+        <input type="text" :value="dnumber1" @input="num1input">
+        <h2>props:{{number2}}</h2>
+        <h2>data:{{dnumber2}}</h2>
+        <input type="text" :value="dnumber2" @input="num2input">
+    </div>
+</template>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el:"#app",
+        data(){
+            return{
+                num1:1,
+                num2:0
+            }
+        },
+        methods:{
+            num1change(value){
+                this.num1 = parseInt(value)
+            },
+            num2change(value){
+                this.num2 = parseInt(value)
+            }
+        },
+        components:{
+            cpn:{
+                template:"#cpn",
+                props:{
+                    number1:Number,
+                    number2:Number,
+                },
+                data(){
+                    return{
+                        dnumber1:this.number1,
+                        dnumber2:this.number2
+                    }
+                },
+                methods: {
+                    num1input(event){
+                        //将input中的value赋值到dnumber中
+                        this.dnumber1 = event.target.value;
+                        //为了让父组件可以修改值,发出事件
+                        this.$emit('num1change',this.dnumber1)
+                        //同时修改dnumber2的值
+                        this.dnumber2 = this.dnumber1*100;
+                        this.$emit('num2change',this.dnumber2)
+                    },
+                    num2input(event){
+                        //将input中的value赋值到dnumber中
+                        this.dnumber2 = event.target.value;
+                        //为了让父组件可以修改值,发出事件
+                        this.$emit('num2change',this.dnumber2)
+                        //同时修改dnumber2的值
+                        this.dnumber1 = this.dnumber2 / 100;
+                        this.$emit('num1change',this.dnumber1)
+                    }
+                }
+            }
+
+        }
+    })
+</script>
+</html>
