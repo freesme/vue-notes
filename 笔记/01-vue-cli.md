@@ -60,3 +60,17 @@ vue init webpack vuecli2test
 
 ```
 
+
+
+Runtime + Compiler:	
+
+template -> ast -> render -> vistual dom -> 真实dom
+
+#更小，运行效率更高
+Runtime-only:
+
+render -> vistual dom -> 真实dom
+
+
+
+![1572367553850](01-vue-cli.assets/1572367553850.png)
