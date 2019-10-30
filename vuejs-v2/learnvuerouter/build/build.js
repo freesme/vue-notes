@@ -26,6 +26,7 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
       chunks: false,
       chunkModules: false
     }) + '\n\n')
+
     if (stats.hasErrors()) {
       console.log(chalk.red('  Build failed with errors.\n'))
       process.exit(1)
