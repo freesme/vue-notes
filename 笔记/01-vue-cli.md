@@ -74,3 +74,47 @@ render -> vistual dom -> 真实dom
 
 
 ![1572367553850](01-vue-cli.assets/1572367553850.png)
+
+
+
+### Vue Cli3
+
+- vue-cli3基于webpack4打造，vue-cli2还是webpack3
+- vue-cli3的设计原则是0配置，移除配置文件根目录下的build和config等目录
+- vue-cli3提供vue ui功能，提供了可视化配置，更加人性化
+- 移除了static文件夹，新增了public文件夹，并且index.html移动到public中
+
+创建cli3项目
+
+`vue create vuecli3test`
+
+```bash
+#选择配置
+? Please pick a preset: (Use arrow keys)
+#默认配置 包含babel eslint
+ default (babel, eslint)
+#手动配置
+>Manually select features
+  
+? Check the features needed for your project:
+ (*) Babel
+ ( ) TypeScript
+ #先进的 web app
+>( ) Progressive Web App (PWA) Support
+ ( ) Router
+ ( ) Vuex
+ ( ) CSS Pre-processors
+ (*) Linter / Formatter
+ ( ) Unit Testing
+ ( ) E2E Testing
+
+? Where do you prefer placing config for Babel, PostCSS, ESLint, etc.? (Use arrow keys)
+#独立配置
+> In dedicated config files
+  In package.json
+#保存这些配置作为将来创建项目的模板
+? Save this as a preset for future projects? (y/N)
+
+
+```
+
