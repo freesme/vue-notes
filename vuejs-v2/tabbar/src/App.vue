@@ -1,17 +1,21 @@
 <template>
   <div id="app">
-    <div>首页</div>
-    <div>分类</div>
-    <div>购物车</div>
-    <div>我的</div>
+    <router-view></router-view>
+    <main-tab-bar></main-tab-bar>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'App'
-}
+  import MainTabBar from './components/tabbar/MainTabBar'
+  export default {
+    name: 'App',
+    components: {
+      MainTabBar,
+    }
+  }
 </script>
 
 <style>
+  /*style中引用代码使用@import*/
+  @import "./assets/css/base.css";
 </style>

@@ -10,3 +10,5 @@ new Vue({
   router,
   render: h => h(App)
 })
+
+// require('./assets/css/base.css')
