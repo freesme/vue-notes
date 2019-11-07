@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promise</title>
+</head>
+<body>
+
+</body>
+
+<script>
+
+
+    //参数是一个函数
+    //resolve ,reject也是函数(函数的参数是两个函数)
+    new Promise((resolve, reject) => {
+        setTimeout(() => {
+            //执行resolve会执行Then
+            resolve()
+            //失败调用reject 到catch处理
+            reject()
+            // console.log('Hello world');
+        }, 1000)
+    }).then(() => {
+        console.log('Hello world');
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve()
+            })
+        }).then(() => {
+            console.log('Hello vue');
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve()
+                })
+            }).then(() => {
+                console.log('Hello java');
+            })
+        })
+    }).catch(err=>{
+        console.log(err);
+    })
+</script>
+</html>
