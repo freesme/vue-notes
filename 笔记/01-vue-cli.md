@@ -113,8 +113,10 @@ render -> vistual dom -> 真实dom
 > In dedicated config files
   In package.json
 #保存这些配置作为将来创建项目的模板
-? Save this as a preset for future projects? (y/N)
-
-
+? Save this as a preset for future projects? (y/N)修改
 ```
+
+修改配置的三种方式
+
+`vue ui`
 
